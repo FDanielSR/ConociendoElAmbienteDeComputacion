@@ -1,0 +1,74 @@
+Niveles de Permiso
+
+Todos los archivos y directorios en Linux y Unix tienen tres niveles de permisos los cuales son:
+
+    Usuario: Propietario del archivo, se representa con la letra U, es quien crea el archivo o directorio
+    Grupo: Grupo propietario del archivo, se representa con la letra G, generalmente cada usuario pertenece al menos a un grupo de trabajo.
+    Otros o Resto de usuarios, se representa con la letra O, aquí se agrupan al resto de usuarios o grupos con el cual el propietario no tiene ningún vínculo, es decir el resto de usuarios del
+    sistema.
+    
+
+Tipos de Permiso
+
+En cada uno de los niveles de permisos se pueden asignar los siguientes permisos
+
+    Lectura (r): En archivos Puede listar, copiar o visualizarlo. En Directorios pueden ver el contenido, se pueden listar a través del comando ls
+    Escritura (w): En archivos significa que se puede modificar o borrar el contenido, incluso puede modificar los permisos. En Directorios significa que puede crear, eliminar archivos y directorios 
+    dentro de ese directorio.
+    Ejecución (x): En archivos significa que se puede ejecutar el contenido. En Directorios significa que podemos entrar en la carpeta (comando cd).
+
+Cada archivo está compuesto de 10 caracteres: drwxr-xr-x. El primer caracter representa el tipo de archivo. Los 3 siguientes los permisos de usuario, los 3 siguientes los permisos de grupo y los 3 últimos los permisos para otros:
+
+    d:   tipo de archivo.
+    rwx: permisos de propietario (lectura, escritura y ejecución).
+    r-x: permisos de grupo (lectura y ejecución).
+    r-x: permisos para el resto (lectura y ejecución).
+
+Los tipos de archivo pueden ser:
+
+    – archivo
+    d directorio
+    l enlace simbólico.
+    c dispositivo de caracteres.
+    b dispositivo de bloques.
+    p tubería.
+    s socket.
+ 
+Permisos numéricos
+
+Podemos utilizar números para cambiar los permisos de un archivo.
+
+Son 3 números que van del 0 al 7:
+
+    Primer número:  permisos de propietario.
+    Segundo número: permisos de grupo.
+    Tercer número:  permisos para el resto.
+
+Para representar del 0 al 7 necesitamos 3 bits, que son los 3 bits utilizados para dar permisos a propietario, grupo y al resto. Con un '1' damos permiso y con un '0' se lo quitamos. Va en el siguiente orden: rwx.
+
+Binario 	Decimal 	Permisos 	Descripción
+
+  000 		  0 		 - - - 	Ningún permiso
+  001 		  1 		 - - x 	Ejecución
+  010 		  2 		 - w - 	Escritura
+  011 		  3 		 - w x 	Escritura y ejecución
+  100 		  4 		 r - - 	Lectura
+  101 		  5 		 r - x 	Lectura y ejecución
+  110 		  6 		 r w - 	Lectura y escritura
+  111 		  7 		 r w x 	Lectura, escritura y ejecución
+  
+
+Modificación de permisos
+
+Estos permisos pueden modificarse según sea la necesidad del administrador del archivo o directorio, esta acción se puede realizar mediante el comando chmod
+
+chmod <modificadores><permiso> nombre_archivo
+
+Los modificadores más importantes son
+
+-R: modifica los permisos recursivamente
+
+-v: muestra cada archivo o directorio que se está modificando
+
+ 
+  
